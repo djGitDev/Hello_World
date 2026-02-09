@@ -43,10 +43,10 @@ jobs:
 
       - name: Build Docker image
         run: |
-            docker build -t ${DOCKER_HUB_USERNAME}/hello_world:latest .
+            docker build -t ${{DOCKER_HUB_USERNAME}}/hello_world:latest .
 
       - name: Push Docker image
         run: |
-            docker push ${DOCKER_HUB_USERNAME}/hello_world:latest
+            docker push ${{DOCKER_HUB_USERNAME}}/hello_world:latest
             env:
                 DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
